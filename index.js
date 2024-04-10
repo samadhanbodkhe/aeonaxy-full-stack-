@@ -12,7 +12,11 @@ app.use(express.static(path.join(__dirname, "dist")))
 app.use(cookieParser())
 app.use(express.json())
 
-app.use(cors())
+app.use(cors(
+    {
+        origin: "https://aeonaxy-full-stack-8sbk.onrender.com"
+    }
+))
 app.use(express.static("uploads"))
 
 app.use("/api/v1/admin", require("./routes/userRoutes"))
